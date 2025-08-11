@@ -1,0 +1,26 @@
+# Compiled / build
+/build/
+ /target/
+ /out/
+ .gradle/
+
+# IDEs
+ .idea/
+ *.iml
+ .project
+ .classpath
+ .settings/
+
+# Logs
+ *.log
+
+# SO
+ .DS_Store
+ Thumbs.db
+
+# Serenity Reports
+ **/site/serenity/
+ **/serenity/*.html
+ **/serenity/*.csv
+ **/serenity/*.json
+ **/serenity/*.xml

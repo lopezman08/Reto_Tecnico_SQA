@@ -1,7 +1,6 @@
 apply plugin: 'java-library'
 apply plugin: 'net.serenity-bdd.aggregator'
 
-
 repositories {
     mavenLocal()
     mavenCentral()
@@ -15,37 +14,49 @@ buildscript {
         jcenter()
     }
     dependencies {
-
         classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.80")
     }
 }
 
-
 dependencies {
-
     implementation 'net.serenity-bdd:serenity-junit:2.0.80'
-    implementation 'net.serenity-bdd:serenity-cucumber:1.9.45'
+    implementation 'net.serenity-bdd:serenity-cucumber:1.9.51'
     implementation 'net.serenity-bdd:serenity-core:2.0.80'
+
+    implementation 'io.github.bonigarcia:webdrivermanager:5.8.0'
+
     implementation 'org.slf4j:slf4j-simple:1.7.7'
     implementation 'com.google.guava:guava:23.0'
-    implementation group: 'org.apache.poi', name: 'poi', version: '3.17'
-    implementation group: 'org.apache.poi', name: 'poi-ooxml', version: '3.17'
+    implementation 'org.apache.poi:poi:3.17'
+    implementation 'org.apache.poi:poi-ooxml:3.17'
 
-
-
-
+    testImplementation 'junit:junit:4.13.1'
 }
-
 
 test {
-
     ignoreFailures = true
+
+    doFirst {
+        delete fileTree("$buildDir/site/serenity")
+        delete fileTree("$buildDir/serenity")
+    }
+
+    systemProperty "junit.jupiter.extensions.autodetection.enabled", "true"
 }
 
+tasks.named('test') {
+    finalizedBy 'aggregate'
+}
+
+tasks.named('aggregate') {
+    mustRunAfter 'test'
+    doLast {
+        println "Serenity report at: ${buildDir}/site/serenity/index.html"
+    }
+}
 
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
-
 
 gradle.startParameter.continueOnFailure = true

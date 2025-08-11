@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Book an appointment by selecting a date on the datepicker","Select a date of the current month from the calendar","PENDING","2025-08-10T22:53:54.6468627-05:00[America/Bogota]","0.0","11.26"
+"Book an appointment by selecting a date on the datepicker","Select a date of the next month from the calendar","PENDING","2025-08-10T22:54:06.4873114-05:00[America/Bogota]","0.0","4.6"
+"Book an appointment by selecting a date on the datepicker","Enter a date manually on the datepicker field","PENDING","2025-08-10T22:54:11.6064442-05:00[America/Bogota]","0.0","4.03"

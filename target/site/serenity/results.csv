@@ -1,0 +1,4 @@
+"Story","Title","Result","Date","Stability","Duration (s)"
+"Book an appointment by selecting a date on the datepicker","Select a date of the current month from the calendar","SUCCESS","2025-08-11T00:17:26.5042385-05:00[America/Bogota]","0.0","16.21"
+"Book an appointment by selecting a date on the datepicker","Select a date of the next month from the calendar","SUCCESS","2025-08-11T00:17:43.3271914-05:00[America/Bogota]","0.0","9.44"
+"Book an appointment by selecting a date on the datepicker","Enter a date manually on the datepicker field","SUCCESS","2025-08-11T00:17:53.2642412-05:00[America/Bogota]","0.0","8.87"
